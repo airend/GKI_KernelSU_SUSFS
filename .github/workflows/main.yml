@@ -45,6 +45,13 @@ on:
           - 4k
           - 16k
         default: 4k
+      bore_variant:
+        description: "BORE patch generation for 6.6: 5.9.6 (default) or 5.1.0 (kABI-slot relocatable, boot-test A/B)"
+        type: choice
+        options:
+          - 5.9.6
+          - 5.1.0
+        default: 5.9.6
       brand_name:
         description: "Kernel Branding (empty = stock version string)"
         type: string
@@ -681,6 +688,7 @@ jobs:
       brand_name: ${{ inputs.brand_name || 'Wild' }}
       keep_kmi: ${{ inputs.keep_kmi || false }}
       use_bore: ${{ inputs.use_bore || true }}
+      bore_variant: ${{ inputs.bore_variant || '5.9.6' }}
       os_patch_level: ${{ inputs.os_patch_level || 'All' }}
       allow_version_mismatch: ${{ inputs.allow_version_mismatch || false }}
       page_size: ${{ inputs.page_size || '4k' }}
@@ -712,6 +720,7 @@ jobs:
       brand_name: ${{ inputs.brand_name || 'Wild' }}
       keep_kmi: ${{ inputs.keep_kmi || false }}
       use_bore: ${{ inputs.use_bore || true }}
+      bore_variant: ${{ inputs.bore_variant || '5.9.6' }}
       os_patch_level: ${{ inputs.os_patch_level || 'All' }}
       allow_version_mismatch: ${{ inputs.allow_version_mismatch || false }}
       page_size: ${{ inputs.page_size || '4k' }}
@@ -743,6 +752,7 @@ jobs:
       brand_name: ${{ inputs.brand_name || 'Wild' }}
       keep_kmi: ${{ inputs.keep_kmi || false }}
       use_bore: ${{ inputs.use_bore || true }}
+      bore_variant: ${{ inputs.bore_variant || '5.9.6' }}
       os_patch_level: ${{ inputs.os_patch_level || 'All' }}
       allow_version_mismatch: ${{ inputs.allow_version_mismatch || false }}
       page_size: ${{ inputs.page_size || '4k' }}
@@ -774,6 +784,7 @@ jobs:
       brand_name: ${{ inputs.brand_name || 'Wild' }}
       keep_kmi: ${{ inputs.keep_kmi || false }}
       use_bore: ${{ inputs.use_bore || true }}
+      bore_variant: ${{ inputs.bore_variant || '5.9.6' }}
       os_patch_level: ${{ inputs.os_patch_level || 'All' }}
       allow_version_mismatch: ${{ inputs.allow_version_mismatch || false }}
       page_size: ${{ inputs.page_size || '4k' }}
@@ -805,6 +816,7 @@ jobs:
       brand_name: ${{ inputs.brand_name || 'Wild' }}
       keep_kmi: ${{ inputs.keep_kmi || false }}
       use_bore: ${{ inputs.use_bore || true }}
+      bore_variant: ${{ inputs.bore_variant || '5.9.6' }}
       os_patch_level: ${{ inputs.os_patch_level || 'All' }}
       allow_version_mismatch: ${{ inputs.allow_version_mismatch || false }}
       page_size: ${{ inputs.page_size || '4k' }}
@@ -836,6 +848,7 @@ jobs:
       brand_name: ${{ inputs.brand_name || 'Wild' }}
       keep_kmi: ${{ inputs.keep_kmi || false }}
       use_bore: ${{ inputs.use_bore || true }}
+      bore_variant: ${{ inputs.bore_variant || '5.9.6' }}
       os_patch_level: ${{ inputs.os_patch_level || 'All' }}
       allow_version_mismatch: ${{ inputs.allow_version_mismatch || false }}
       page_size: ${{ inputs.page_size || '4k' }}
@@ -867,6 +880,7 @@ jobs:
       brand_name: ${{ inputs.brand_name || 'Wild' }}
       keep_kmi: ${{ inputs.keep_kmi || false }}
       use_bore: ${{ inputs.use_bore || true }}
+      bore_variant: ${{ inputs.bore_variant || '5.9.6' }}
       os_patch_level: ${{ inputs.os_patch_level || 'All' }}
       allow_version_mismatch: ${{ inputs.allow_version_mismatch || false }}
       page_size: ${{ inputs.page_size || '4k' }}
